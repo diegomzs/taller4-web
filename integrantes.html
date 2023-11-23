@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .ocultar {
+            display: none;
+        }
+
+        .mostrar {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Validacion de campos - Usuarios</h3>
+    <br>
+    <form action="" name="formulario">
+        
+            <label for="id" class="usr">Id usuario</label>
+            <input type="number" id="Idusu"> <br>
+            <h5><span>0</span>/20 (maximos caracteres)</h5>
+        
+        <br>
+        <label for="pais" class="pais">Id pais</label>
+        <input type="number" id="Idpais"> <br> <br>
+
+        <label for="nombre" class="nombre">Nombre</label>
+        <input type="text" id="nombre"> <br> <br>
+
+        
+        <label for="apellido" class="apellido">Apellido</label>
+        <input type="text" id="apellido" required minlength="1" maxlength="20"> <br>
+        (max. 20 caracteres)
+        <br> <br>
+        
+        <label for="direccion" class="direccion">Direccion</label>
+        <input type="text" id="direccion" placeholder="cll, cra, av, anv, trans"> <br> <br>
+
+        <label for="ccusr" class="ccUsuario">C.C Usuario</label>
+        <input type="text" id="ccUsuario" required minlength="10" maxlength="20" onkeyup="this.value=Numeros(this.value)"> <br>
+        (min. 10 caracteres, max. 20 caracteres solo números)
+        <br> <br>
+
+            
+        <label for="ccpswd" class="ccpswd">C.C contraseña</label>
+        <input type="text" id="pass1" value="" required minlength="15" maxlength="20" onkeypress="return Especiales(event);" required> <br>
+        (min. 15 caracteres, max. 20 caracteres)
+        <br> <br>
+
+        <label for="confirmar" class="confirmar">Confirmar contraseña</label>
+        <input type="text" id="pass2" value="" required minlength="15" maxlength="20" onkeypress="return Especiales(event);" required> <br>
+        <br>
+        <button type="submit" id="login" class="btn btn-primary" onclick="validarPswd()">Validar contraseña</button>
+        
+        <br>
+        <br>
+ 
+        <label for="email" class="email">Email</label>
+        <input type="text" id="email" required minlength="1" maxlength="120">
+        (max. 120 caracteres)
+        <br> <br>
+
+        <label for="telefono" class="telefono">Telefono</label>
+        <input type="text" id="telefono"> <br> <br>
+        <br>
+        
+        
+        <label for="formulario2" class="registro"> <b>Registro de gustos</b></label> <br>
+        <br><input type="radio" name="habilitar" value="si" id="habilitarSi"> Habilitar formulario 
+        <input type="radio" name="habilitar" value="no" id="habilitarNo"> No habilitar formulario <br>
+
+
+        <br>
+        <label for="color">Color favorito</label>
+        <input type="text" id="favColor" disabled> <br> <br>
+
+        <label for="marca">Marca de carro favorita</label>
+        <input type="text" id="favMarca" disabled> <br> <br>
+
+        <label for="estilo">Estilo de carro favorito</label> 
+        <input type="text" id="favEstilo" disabled> <br> <br>
+
+        <label for="modelo">Modelo de carro que mas le gusta</label>
+        <input type="text" id="favModelo" disabled> <br> <br>
+        <br>
+
+        <label for="valor" class="form-label"><b>Valor maximo y minimo que gastaria en un auto</b></label> <br>
+        Min <input type="range" id="range1" min="10000000" max="90000000"> <label for="r1" id="r1">0</label> <br>
+        Max <input type="range" id="range2" min="10000000" max="90000000"> <label for="r2" id="r2">0</label>
+
+
+    </form>
+    <script src="validaciones.js"></script>
+
+   
+
+</body>
+</html>
